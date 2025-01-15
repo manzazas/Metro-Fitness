@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Cart - Metro Fitness</title>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Fitness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel = "stylesheet" href ="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon_metro.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Germania+One&family=Montserrat+Subrayada:wght@400;700&family=Pathway+Gothic+One&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Tiny5&display=swap" rel="stylesheet">
+</head>
+
+
+   
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="MetroFitness.jpg" alt="Metro Fitness Logo" width="50" height="50">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Memberships.html">Memberships</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="store.html">Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active position-relative" href="cart.html">Cart
+              <i class="fas fa-shopping-cart fa-lg"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
+                0
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  
+<!-- Cart Section -->
+<div class="container-cart">
+    <h2 class="text-center mb-4 font-monty section-heading">Your Shopping Cart</h2>
+    <div class="cart-table">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+               
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><button class="btn btn-danger" data-cesta-feira-clear-basket>Clear Cart</button></td>
+                    <td></td>
+                    <td class="text-end cart-total">Total:</td>
+                    <td class="text-center cart-total" id="total-value">$0.00</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+
+<div id="credit-cards" class="credit-cards-section">
+    <h1 class="hero-title card-title font-monty">We Accept</h1>
+    <img src="major-credit-card-logos-png-5.png" alt="Accepted Credit Cards" class="credit-cards-image">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="text-center mt-5">
+    <div class = "footer-content">
+    <p>Contact us: <a href="mailto:info@metrofitness.com" class = "footer-link">info@metrofitness.com</a> | Phone: (555) 123-4567</p>
+    <p>&copy; 2024 Metro Fitness. All rights reserved.</p>
+  </div>
+  </footer>
+ 
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/cesta-feira.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartTableBody = document.getElementById("cart-items");
+    const totalValueElement = document.getElementById("total-value");
+
+    if (cartItems.length === 0) {
+        cartTableBody.innerHTML = `<tr><td colspan="5" class="text-center">Your cart is empty</td></tr>`;
+        totalValueElement.textContent = "$0.00";
+        return;
+    }
+
+    let totalValue = 0;
+
+    cartItems.forEach((item, index) => {
+        const totalItemPrice = item.price * item.quantity;
+        totalValue += totalItemPrice;
+
+        const row = `
+            <tr id="cart-item-${index}">
+                <td>${item.productName}</td>
+                <td>${item.quantity}</td>
+                <td class="text-center">$${item.price.toFixed(2)}</td>
+                <td class="text-center">$${totalItemPrice.toFixed(2)}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm remove-item" data-index="${index}">Remove</button>
+                </td>
+            </tr>
+        `;
+        cartTableBody.innerHTML += row;
+    });
+
+    totalValueElement.textContent = `$${totalValue.toFixed(2)}`;
+
+
+    document.querySelectorAll(".remove-item").forEach(button => {
+        button.addEventListener("click", (e) => {
+            const index = parseInt(e.target.getAttribute("data-index"));
+            cartItems.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+            location.reload(); 
+        });
+    });
+
+    
+    document.querySelector("[data-cesta-feira-clear-basket]").addEventListener("click", () => {
+        localStorage.removeItem("cart");
+        location.reload();
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Fitness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel = "stylesheet" href ="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon_metro.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Germania+One&family=Montserrat+Subrayada:wght@400;700&family=Pathway+Gothic+One&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Tiny5&display=swap" rel="stylesheet">
+
+
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="MetroFitness.jpg" alt="Metro Fitness Logo" width="50" height="50">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link " href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Memberships.html">Memberships</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="store.html">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link position-relative" href="cart.html">Cart
+                  <i class="fas fa-shopping-cart fa-lg"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
+                    0
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+      <div class="store-section">
+        <div class="container text-center">
+          <h2 class="section-heading font-monty">We Have What you Need</h2>
+  <div class="shop-page container mt-5">
+    <div class="row">
+     <div class="col-lg-3 col-md-6 mb-4">
+         <div class="card">
+             <img class="card-img-top img-thumbnail" src="metro_bottle.jpg" alt="Metro Bottle" data-bs-toggle="modal" data-bs-target="#imageModal">
+             <div class="card-body">
+                 <h4 class="card-title">Metro Bottle</h4>
+                 <p class="card-text">Price: $20.00</p>
+             </div>
+             <div class="card-footer">
+                 <form action="" class="form" data-cesta-feira-form>
+                     <div class="form-group">
+                         <input type="number" min="1" max = "20" value="" class="form-control" name="quantity" data-cesta-feira-attribute placeholder="Quantity">
+                     </div>
+                     <input type="hidden" value="Metro Bottle" name="product_name" data-cesta-feira-attribute="">
+                     <input type="hidden" value="20.00" name="unity_price" data-cesta-feira-attribute>
+                     <input type="hidden" value="1" data-cesta-feira-item-id />
+                     <input type="hidden" value="shoe" name="item_type" data-cesta-feira-attribute>
+                     <input type="submit" class="btn btn-primary" value="Add to Cart"/>
+                 </form>
+             </div>
+         </div>
+     </div>
+     
+
+     <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <img class="card-img-top" src="metro_bag.jpg" alt="Metro Bag" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <div class="card-body">
+                <h4 class="card-title">Metro Gym Bag</h4>
+                <p class="card-text">Price: $35.00</p>
+            </div>
+            <div class="card-footer">
+                <form action="" class="form" data-cesta-feira-form>
+                    <div class="form-group">
+                        <input type="number" min="1" max = "10" value="" class="form-control" name="quantity" data-cesta-feira-attribute placeholder="Quantity">
+                    </div>
+                    <input type="hidden" value="Metro Gym Bag" name="product_name" data-cesta-feira-attribute="">
+                    <input type="hidden" value="35.00" name="unity_price" data-cesta-feira-attribute>
+                    <input type="hidden" value="" data-cesta-feira-item-id />
+                    <input type="hidden" value="shoe" name="item_type" data-cesta-feira-attribute>
+                    <input type="submit" class="btn btn-primary" value="Add to Cart"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <img class="card-img-top" src="metro_powder.jpg" alt="Metro Powder" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <div class="card-body">
+                <h4 class="card-title">Metro Protein Powder</h4>
+                <p class="card-text">Price: $50.00</p>
+            </div>
+            <div class="card-footer">
+                <form action="" class="form" data-cesta-feira-form>
+                    <div class="form-group">
+                        <input type="number" min="1" max = "15" value="" class="form-control" name="quantity" data-cesta-feira-attribute placeholder="Quantity">
+                    </div>
+                    <input type="hidden" value="Metro Protein Powder" name="product_name" data-cesta-feira-attribute="">
+                    <input type="hidden" value="50.00" name="unity_price" data-cesta-feira-attribute>
+                    <input type="hidden" value="" data-cesta-feira-item-id />
+                    <input type="hidden" value="shoe" name="item_type" data-cesta-feira-attribute>
+                    <input type="submit" class="btn btn-primary" value="Add to Cart"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <img class="card-img-top " src="metro_hoodie.jpg" alt="Metro Hoodie" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <div class="card-body">
+                <h4 class="card-title">Metro Hoodie</h4>
+                <p class="card-text">Price: $40.00</p>
+            </div>
+            <div class="card-footer">
+                <form action="" class="form" data-cesta-feira-form>
+                    <div class="form-group">
+                        <input type="number" min="1" max = "5" value="" class="form-control" name="quantity" data-cesta-feira-attribute placeholder="Quantity">
+                    </div>
+                    <input type="hidden" value="Metro Hoodie" name="product_name" data-cesta-feira-attribute="">
+                    <input type="hidden" value="40.00" name="unity_price" data-cesta-feira-attribute>
+                    <input type="hidden" value="" data-cesta-feira-item-id />
+                    <input type="hidden" value="shoe" name="item_type" data-cesta-feira-attribute>
+                    <input type="submit" class="btn btn-primary" value="Add to Cart"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <img class="card-img-top img-thumbnail" src="metro_shirt.jpg" alt="Metro Shirt" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <div class="card-body">
+                <h4 class="card-title">Metro Shirt</h4>
+                <p class="card-text">Price: $25.00</p>
+            </div>
+            <div class="card-footer">
+                <form action="" class="form" data-cesta-feira-form>
+                    <div class="form-group">
+                        <input type="number" min="1" max = "5" value="" class="form-control" name="quantity" data-cesta-feira-attribute placeholder="Quantity">
+                    </div>
+                    <input type="hidden" value="Metro Shirt" name="product_name" data-cesta-feira-attribute="">
+                    <input type="hidden" value="25.00" name="unity_price" data-cesta-feira-attribute>
+                    <input type="hidden" value="" data-cesta-feira-item-id />
+                    <input type="hidden" value="shoe" name="item_type" data-cesta-feira-attribute>
+                    <input type="submit" class="btn btn-primary" value="Add to Cart"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <img class="card-img-top img-thumbnail" src="metro_hat2.jpg" alt="Metro Hat" data-bs-toggle="modal" data-bs-target="#imageModal">
+            <div class="card-body">
+                <h4 class="card-title">Metro Hat</h4>
+                <p class="card-text">Price: $20.00</p>
+            </div>
+            <div class="card-footer">
+                <form action="" class="form" data-cesta-feira-form>
+                    <div class="form-group">
+                        <input type="number" min="1" max = "10" value="" class="form-control" name="quantity" data-cesta-feira-attribute placeholder="Quantity">
+                    </div>
+                    <input type="hidden" value="Metro Hat" name="product_name" data-cesta-feira-attribute="">
+                    <input type="hidden" value="20.00" name="unity_price" data-cesta-feira-attribute>
+                    <input type="hidden" value="" data-cesta-feira-item-id />
+                    <input type="hidden" value="shoe" name="item_type" data-cesta-feira-attribute>
+                    <input type="submit" class="btn btn-primary" value="Add to Cart"/>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+ </div>
+ <!-- /.row -->
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <footer class="text-center mt-5">
+    <div class = "footer-content">
+    <p>Contact us: <a href="mailto:info@metrofitness.com" class = "footer-link">info@metrofitness.com</a> | Phone: (555) 123-4567</p>
+    <p>&copy; 2024 Metro Fitness. All rights reserved.</p>
+  </div>
+  </footer>
+ 
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jStorage/0.4.12/jstorage.min.js"></script>
+<script src="js/cesta-feira.js"></script>
+<script type="application/javascript">
+  $( document ).ready(function() {
+    $.CestaFeira({
+      debug: false,
+      onItemAdded: function (item) {
+        console.log(item);
+      },
+      onItemUpdated: function (item) {
+        console.log(item);
+      }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    updateCartCount();
+    document.querySelectorAll(".btn-primary").forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+            const card = e.target.closest(".card");
+            const productName = card.querySelector(".card-title").textContent.trim();
+            const price = parseFloat(card.querySelector(".card-text").textContent.replace("Price: $", "").trim());
+            const quantityInput = card.querySelector("input[name='quantity']");
+            const quantity = parseInt(quantityInput.value) || 1;
+
+           
+            const existingItem = cartItems.find(item => item.productName === productName);
+            if (existingItem) {
+                existingItem.quantity += quantity; 
+            } else {
+                cartItems.push({ productName, price, quantity }); 
+            }
+
+           
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+            updateCartCount();
+        });
+    });
+
+    function updateCartCount() {
+        const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+        document.getElementById("cart-count").textContent = cartCount;
+    }
+});
+
+</script>
+
+</body>
+
+</html>
